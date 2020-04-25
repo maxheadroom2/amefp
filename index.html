@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>FORM-G-ASPA Mastriz Ambiental GHIA</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="row text-center ">
+
+
+    <!-- Table  -->
+    <table class="table centered highlight striped responsive-table bordered" id="testTable">
+      <!-- Table head -->
+      <thead>
+        <tr>
+          <th>Nº de Fila</th>
+          <th>Proceso padre</th>
+          <th>N° de Actividad</th>
+          <th>Nombre del proceso</th>
+          <th>detalles de Actividad</th>
+          <th>Maquinaria, dispositivos, herramientas</th>
+          <th>Producto</th>
+          <th>Especificacion o tolerancia</th>
+          <th>Tecnica de evaluacion actual</th>
+          <th>Tamaño de muestra aproximado</th>
+          <th>Frecuencia</th>
+          <th>Documentos asociados como metodos, informacion de control</th>
+          <th>Link directo</th>
+          <th>Etiqueta en el sistema</th>
+          <th>Notas 1</th>
+          <th>Modo de falla | Que puede fallar en la actividad</th>
+          <th>Efecto potencial de la falla</th>
+          <th>Causas potenciales de la falla</th>
+          <th>Acciones actuales </th>
+          <th>Notas</th>
+          <th>Detalle el conjunto de acciones necesarias para recuperar, en el menor tiempo posible, el estado operativo normal.</th>
+          <th>Nivel de contingencia</th>
+          <th>Ocurrencia</th>
+          <th>Descripción ocurrencia</th>
+          <th>Severidad</th>
+          <th>Descripción severidad</th>
+          <th>Detección</th>
+          <th>Descripción</th>
+          <th>Numero de prioridad de riesgo NPR</th>
+          <th>Prioridad del NPR</th>
+          <th>Valor</th>
+          <th>Criterio</th>
+          <th>NPR residual</th>
+          <th>Prioridad del NPR residual</th>
+          <th>Acciones recomendadas</th>
+          <th>pond 1</th>
+          <th>Procesos</th>
+          <th>pond 2</th>
+          <th>Capacidades</th>
+          <th>pond 3</th>
+          <th>Tecnología</th>
+          <th>pond 4</th>
+          <th>Información</th>
+          <th>pond 5</th>
+          <th>Tiempo</th>
+          <th>pond 7</th>
+          <th>Resultado</th>
+
+
+
+
+        </tr>
+      </thead>
+      <!-- Table head -->
+      <!-- Table body -->
+
+      <!-- Modal Trigger -->
+
+
+
+
+      <!-- Modal Structure -->
+
+      <tbody id="demo">
+      </tbody>
+
+
+      <!-- Table body -->
+    </table>
+    <!-- Table  -->
+
+  </div>
+
+
+
+  <!-- Start your project here-->
+
+  <!-- /Start your project here-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+
+  <script type="text/javascript">
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1IkPwd5BRhOqGwDJq7dxep_vND8gtiNhBSUJeWXDSNrk/1/public/values?alt=json", function(data) {
+
+      var sheetData = data.feed.entry;
+
+      var i;
+      for (i = 0; i < sheetData.length; i++) {
+
+        var a1 = data.feed.entry[i]['gsx$ndefila']['$t'];
+        var a2 = data.feed.entry[i]['gsx$procesopadre']['$t'];
+        var a3 = data.feed.entry[i]['gsx$ndeactividad']['$t'];
+        var a4 = data.feed.entry[i]['gsx$nombredelproceso']['$t'];
+        var a5 = data.feed.entry[i]['gsx$detallesdeactividad']['$t'];
+        var a6 = data.feed.entry[i]['gsx$maquinariadispositivosherramientas']['$t'];
+        var a7 = data.feed.entry[i]['gsx$producto']['$t'];
+        var a8 = data.feed.entry[i]['gsx$especificacionotolerancia']['$t'];
+        var a9 = data.feed.entry[i]['gsx$tecnicadeevaluacionactual']['$t'];
+        var a10 = data.feed.entry[i]['gsx$tamañodemuestraaproximado']['$t'];
+        var a11 = data.feed.entry[i]['gsx$frecuencia']['$t'];
+        var a12 = data.feed.entry[i]['gsx$documentosasociadoscomometodosinformaciondecontrol']['$t'];
+        var a13 = data.feed.entry[i]['gsx$linkdirecto']['$t'];
+        var a14 = data.feed.entry[i]['gsx$etiquetaenelsistema']['$t'];
+        var a15 = data.feed.entry[i]['gsx$notas1']['$t'];
+        var a16 = data.feed.entry[i]['gsx$mododefallaquepuedefallarenlaactividad']['$t'];
+        var a17 = data.feed.entry[i]['gsx$efectopotencialdelafalla']['$t'];
+        var a18 = data.feed.entry[i]['gsx$causaspotencialesdelafalla']['$t'];
+        var a19 = data.feed.entry[i]['gsx$accionesactuales']['$t'];
+        var a20 = data.feed.entry[i]['gsx$notas']['$t'];
+        var a21 = data.feed.entry[i]['gsx$detalleelconjuntodeaccionesnecesariaspararecuperarenelmenortiempoposibleelestadooperativonormal.']['$t'];
+        var a22 = data.feed.entry[i]['gsx$niveldecontingencia']['$t'];
+        var a23 = data.feed.entry[i]['gsx$ocurrencia']['$t'];
+        var a24 = data.feed.entry[i]['gsx$descripciónocurrencia']['$t'];
+        var a25 = data.feed.entry[i]['gsx$severidad']['$t'];
+        var a26 = data.feed.entry[i]['gsx$descripciónseveridad']['$t'];
+        var a27 = data.feed.entry[i]['gsx$detección']['$t'];
+        var a28 = data.feed.entry[i]['gsx$descripción']['$t'];
+        var a29 = data.feed.entry[i]['gsx$numerodeprioridadderiesgonpr']['$t'];
+        var a30 = data.feed.entry[i]['gsx$prioridaddelnpr']['$t'];
+        var a31 = data.feed.entry[i]['gsx$valor']['$t'];
+        var a32 = data.feed.entry[i]['gsx$criterio']['$t'];
+        var a33 = data.feed.entry[i]['gsx$nprresidual']['$t'];
+        var a34 = data.feed.entry[i]['gsx$prioridaddelnprresidual']['$t'];
+        var a35 = data.feed.entry[i]['gsx$accionesrecomendadas']['$t'];
+        var a36 = data.feed.entry[i]['gsx$pond1']['$t'];
+        var a37 = data.feed.entry[i]['gsx$procesos']['$t'];
+        var a38 = data.feed.entry[i]['gsx$pond2']['$t'];
+        var a39 = data.feed.entry[i]['gsx$capacidades']['$t'];
+        var a40 = data.feed.entry[i]['gsx$pond3']['$t'];
+        var a41 = data.feed.entry[i]['gsx$tecnología']['$t'];
+        var a42 = data.feed.entry[i]['gsx$pond4']['$t'];
+        var a43 = data.feed.entry[i]['gsx$información']['$t'];
+        var a44 = data.feed.entry[i]['gsx$pond5']['$t'];
+        var a45 = data.feed.entry[i]['gsx$tiempo']['$t'];
+        var a46 = data.feed.entry[i]['gsx$pond7']['$t'];
+        var a47 = data.feed.entry[i]['gsx$resultado']['$t'];
+
+
+        $(document).ready(function() {
+          $('.modal').modal();
+          $('.collapsible').collapsible();
+          $('.tooltipped').tooltip();
+        });
+
+
+        document.getElementById('demo').innerHTML += (
+          '<tr>' +
+          '<td>' +
+        a1 +
+          '</td>' +
+          '<td>' +
+        a2 +
+          '</td>' +
+          '<td>' +
+        a3 +
+          '</td>' +
+          '<td>' +
+        a4 +
+          '</td>' +
+
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a5 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a6 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a7 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a8 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a9 +
+          '</td>' +
+          '<td>' +
+        a10 +
+          '</td>' +
+          '<td>' +
+        a11 +
+          '</td>' +
+          '<td>' +
+        a12 +
+          '</td>' +
+          '<td>' +
+        a13 +
+          '</td>' +
+          '<td>' +
+        a14 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a15 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a16 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a17 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a18 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a19 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a20 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a21 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a22 +
+          '</td>' +
+          '<td>' +
+        a23 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a24 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a25 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a26 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a27 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 250px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a28 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a29 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a30 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a31 +
+          '</td>' +
+          '<td>' +
+        a32 +
+          '</td>' +
+          '<td>' +
+        a33 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a34 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a35 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a36 +
+          '</td>' +
+          '<td>' +
+        a36 +
+          '</td>' +
+          '<td>' +
+        a38 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a39 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a40 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a41 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a42 +
+          '</td>' +
+          '<td>' +
+          '<ul class="collapsible" >' +
+          '<li>' +
+          '<div class="collapsible-header" style="width: 150px"><i class="material-icons">arrow_drop_down</i>Ver</div>' +
+          '  <div class="collapsible-body"><span>' + a43 + '</span></div>' +
+          '</li>' +
+          '</ul> ' +
+          '</td>' +
+          '<td>' +
+        a44 +
+          '</td>' +
+          '<td>' +
+        a45 +
+          '</td>' +
+          '<td>' +
+        a46 +
+          '</td>' +
+          '<td>' +
+        a47 +
+          '</td>' +
+
+
+          '</tr>'
+        );
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function() {
+      $('.collapsible').collapsible();
+      $('.tooltipped').tooltip();
+      $('.pushpin').pushpin();
+    });
+  </script>
+
+  <style media="screen" type="text/css">
+    .collapsible-header {
+      style="width: 150px;
+padding-right: 5px;
+      padding-left: 5px;
+      padding-bottom: 2px;
+      padding-top: 2px;
+    }
+  </style>
+
+</body>
+
+</html>
